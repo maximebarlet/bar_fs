@@ -29,18 +29,63 @@ class SiteController extends AbstractController
     }
 
     /**
-     * @Route("/menu", name="menu")
+     * @Route("/blonde", name="blonde")
      */
-    public function menu(): Response
+    public function blonde(): Response
     {
         $repoCat= $this->getDoctrine()->getRepository(Category::class);
-        $beersCategory = $repoCat ->findByTerm('normal');
+        $beersBlonde = $repoCat ->findByTerm('Blonde');
         
-        return $this->render('menu/menu.html.twig', [
+        return $this->render('menu/blonde.html.twig', [
             'controller_name' => 'SiteController',
             'title' => 'Page de menu',
-            'beersCategory' =>  $beersCategory
+            'beersBlonde' =>  $beersBlonde
         ]); 
+    }
+
+    /**
+     * @Route("/brune", name="brune")
+     */
+     public function brune(): Response
+     {
+         $repoCat= $this->getDoctrine()->getRepository(Category::class);
+         $beersBrune = $repoCat ->findByTerm('Brune');
+         
+         return $this->render('menu/brune.html.twig', [
+             'controller_name' => 'SiteController',
+             'title' => 'Page de menu',
+             'beersBrune' =>  $beersBrune
+         ]); 
+    }
+
+    /**
+     * @Route("/blanche", name="blanche")
+     */
+     public function blanche(): Response
+     {
+         $repoCat= $this->getDoctrine()->getRepository(Category::class);
+         $beersBlanche = $repoCat ->findByTerm('Blanche');
+         
+         return $this->render('menu/blanche.html.twig', [
+             'controller_name' => 'SiteController',
+             'title' => 'Page de menu',
+             'beersBlanche' =>  $beersBlanche
+         ]); 
+    }
+
+     /**
+     * @Route("/ambree", name="ambree")
+     */
+     public function ambree(): Response
+     {
+         $repoCat= $this->getDoctrine()->getRepository(Category::class);
+         $beersBlanche = $repoCat ->findByTerm('Ambrée');
+         
+         return $this->render('menu/ambree.html.twig', [
+             'controller_name' => 'SiteController',
+             'title' => 'Page de menu',
+             'beersAmbre' =>  $beersAmbree
+         ]); 
     }
 
     /**

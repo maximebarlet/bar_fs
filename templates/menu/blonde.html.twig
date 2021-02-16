@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{% for beer in beersBlonde  %}
+                <a href="{{ path('beer_show', { 'id' : beer.id }) }}">
+                    {{ beer.name }}
+                </a>
+                <br/>
+                {{ beer.description }}
+{% endfor %}
+
+{% endblock %}

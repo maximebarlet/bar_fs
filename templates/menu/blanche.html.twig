@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-{% for beer in beersCategory  %}
+{% for beer in beersBlanche  %}
                 <a href="{{ path('beer_show', { 'id' : beer.id }) }}">
                     {{ beer.name }}
                 </a>
