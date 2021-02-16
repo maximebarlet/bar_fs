@@ -78,7 +78,7 @@ class CategoryController extends AbstractController
   }
 
   /**
-   * @Route("/{id}/edit", name="category_edit", methods={"GET","POST"})
+   * @Route("/category/{id}/edit", name="category_edit", methods={"GET","POST"})
    * @param Request $request
    * @param Category $category
    * @return Response

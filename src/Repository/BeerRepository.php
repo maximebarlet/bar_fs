@@ -61,15 +61,14 @@ class BeerRepository extends ServiceEntityRepository
   */
 
 
-  public function findByCategory($value)
+  public function findByCategory()
   {
     return $this->createQueryBuilder('b')
-      ->andWhere('b.id = :val')
-      ->setParameter('val', $value)
-      ->orderBy('b.id', 'ASC')
-      ->setMaxResults(10)
+      ->orderBy('b.id', 'DESC')
+      ->setMaxResults(3)
       ->getQuery()
-      ->getResult()
-      ;
+      ->getResult();
+
+      return getResult();
   }
 }

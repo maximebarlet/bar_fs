@@ -5,6 +5,9 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Beer;
+
+
 
 class SiteController extends AbstractController
 {
@@ -13,9 +16,14 @@ class SiteController extends AbstractController
      */
     public function home(): Response
     {
+        $repoBeer = $this->getDoctrine()->getRepository(Beer::class);
+
+        $lastBeers = $repoBeer->findByCategory();
+
         return $this->render('site/home.html.twig', [
             'controller_name' => 'SiteController',
-            'title' => 'Page d\'accueil'
+            'title' => 'Page d\'accueil',
+            'last3beers' =>  $lastBeers
         ]);
     }
 
