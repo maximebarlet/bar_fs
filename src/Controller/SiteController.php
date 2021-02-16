@@ -15,6 +15,7 @@ class SiteController extends AbstractController
     {
         return $this->render('site/home.html.twig', [
             'controller_name' => 'SiteController',
+            'title' => 'Page d\'accueil'
         ]);
     }
 
@@ -24,7 +25,8 @@ class SiteController extends AbstractController
     public function mentions(): Response
     {
       return $this->render('site/mentions.html.twig', [
-        'controller_name' => 'MentionsController',
+          'controller_name' => 'MentionsController',
+          'title' => 'Mentions légales'
       ]);
     }
 }
