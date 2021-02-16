@@ -56,15 +56,17 @@ class CategoryRepository extends ServiceEntityRepository
 
     return $qb->getQuery()->getResult();
   }
-  public function findByCategory($categories)
+  
+  public function findByTerm($term)
   {
-    return $this->createQueryBuilder('b')
-      ->andWhere('b.name = :val')
-      ->setParameter('val', $categories)
-      ->orderBy('b.id', 'ASC')
+    return $this->createQueryBuilder('t')
+      ->setParameter('val', $term)
+      ->andWhere('t.term = :val')
+      ->orderBy('t.term', 'ASC')
       ->setMaxResults(10)
       ->getQuery()
-      ->getResult()
-      ;
+      ->getResult();
+
+      return getResult();
   }
 }

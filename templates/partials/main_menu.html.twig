@@ -9,7 +9,16 @@
                 <a class="nav-link  {% if route_name is defined and route_name == 'home' %} active {% endif %}" href="{{ path('home') }}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {% if route_name is defined and route_name == 'beer' %} active {% endif %}" href="{{ path('beer') }}">Beers</a>
+                <a class="nav-link {% if route_name is defined and route_name == 'blonde' %} active {% endif %}" href="{{ path('menu') }}">Blonde</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if route_name is defined and route_name == 'brune' %} active {% endif %}" href="{{ path('menu') }}">Brune</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if route_name is defined and route_name == 'blanche' %} active {% endif %}" href="{{ path('menu') }}">Blanche</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if route_name is defined and route_name == 'ambrée' %} active {% endif %}" href="{{ path('menu') }}">Ambrée</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link {% if route_name is defined and route_name == 'mentions' %} active {% endif %}" href="{{ path('mentions') }}">Mentions</a>

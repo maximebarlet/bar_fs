@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Beer;
+use App\Entity\Category;
 
 
 
@@ -25,6 +26,21 @@ class SiteController extends AbstractController
             'title' => 'Page d\'accueil',
             'last3beers' =>  $lastBeers
         ]);
+    }
+
+    /**
+     * @Route("/menu", name="menu")
+     */
+    public function menu(): Response
+    {
+        $repoCat= $this->getDoctrine()->getRepository(Category::class);
+        $beersCategory = $repoCat ->findByTerm('normal');
+        
+        return $this->render('menu/menu.html.twig', [
+            'controller_name' => 'SiteController',
+            'title' => 'Page de menu',
+            'beersCategory' =>  $beersCategory
+        ]); 
     }
 
     /**
