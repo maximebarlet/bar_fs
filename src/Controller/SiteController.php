@@ -34,7 +34,7 @@ class SiteController extends AbstractController
     public function blonde(): Response
     {
         $repoCat= $this->getDoctrine()->getRepository(Category::class);
-        $beersBlonde = $repoCat ->findByTerm('Blonde');
+        $beersBlonde = $repoCat ->findByCatId(1);
         
         return $this->render('menu/blonde.html.twig', [
             'controller_name' => 'SiteController',
